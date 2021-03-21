@@ -1,0 +1,7 @@
+in this folder
+
+docker build . -t spring-boot-servo
+
+once image build run
+
+docker run -p 8080:8080 spring-boot-servo
