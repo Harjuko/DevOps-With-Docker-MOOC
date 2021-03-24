@@ -1,7 +1,0 @@
-in this folder
-
-docker build . -t golang-backend
-
-once image build run
-
-docker run -p 8080:8080 golang-backend
