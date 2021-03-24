@@ -1,0 +1,7 @@
+inside this folder run 
+
+docker build -t frontend .  
+
+then run 
+
+docker run -p 5000:5000 frontend
