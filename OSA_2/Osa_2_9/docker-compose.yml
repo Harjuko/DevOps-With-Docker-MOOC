@@ -7,7 +7,6 @@ services:
     environment:
       POSTGRES_USER: goback
       POSTGRES_PASSWORD: example
-      POSTGRES_DB: backenddb
     container_name: db_backend
     volumes:
       - ./database:/var/lib/postgresql/data
@@ -20,7 +19,6 @@ services:
       - POSTGRES_HOST=db
       - POSTGRES_USER=goback
       - POSTGRES_PASSWORD=example
-      - POSTGRES_DATABASE=backenddb
     command: ./server
     depends_on:
       - db
