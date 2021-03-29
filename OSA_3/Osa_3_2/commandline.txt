@@ -1,0 +1,3 @@
+ #insert this command on the folder where the Dockerfile is located
+ 
+ docker build -t imagebuilder .  && docker run -it --dns="8.8.8.8" -v /var/run/docker.sock:/var/run/docker.sock imagebuilder
