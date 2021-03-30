@@ -1,0 +1,10 @@
+Before optimization
+
+osa_3_4_frontend      latest    4a70a25e6b9b   47 seconds ago   517MB
+osa_3_4_backend       latest    a793ac389fcf   2 minutes ago    323MB
+
+After optimization
+
+REPOSITORY            TAG       IMAGE ID       CREATED          SIZE
+osa_3_4_backend       latest    87fb53fc930e   2 minutes ago    205MB
+osa_3_4_frontend      latest    7ffa340bc097   14 minutes ago   399MB
