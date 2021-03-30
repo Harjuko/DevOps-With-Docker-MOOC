@@ -1,0 +1,3 @@
+REPOSITORY                 TAG       IMAGE ID       CREATED              SIZE
+spring-boot-servo-after    latest    09f22eacca0c   About a minute ago   123MB
+spring-boot-servo-before   latest    71d7f558e652   36 minutes ago       599MB

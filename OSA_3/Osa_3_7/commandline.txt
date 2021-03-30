@@ -1,0 +1,13 @@
+#inside this folder
+
+#for the before
+docker build . -f before.Dockerfile -t spring-boot-servo-before
+
+#for the after
+docker build . -f after.Dockerfile -t spring-boot-servo-after
+
+#once image build run
+docker run -p 8080:8080 spring-boot-servo-before 
+
+#OR
+docker run -p 8080:8080 spring-boot-servo-after 
