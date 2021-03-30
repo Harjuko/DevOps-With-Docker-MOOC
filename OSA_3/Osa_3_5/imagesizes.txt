@@ -1,0 +1,11 @@
+before alpine base image
+
+osa_3_3_backend       latest    7c32c8b33ea3   2 minutes ago    981MB
+osa_3_3_frontend      latest    6a23077c4e2a   6 hours ago      1.19GB
+
+
+after alpine base image
+
+REPOSITORY            TAG       IMAGE ID       CREATED          SIZE
+osa_3_5_frontend      latest    f2c8bdedd966   47 seconds ago   364MB
+osa_3_5_backend       latest    3ace1d6e1875   2 minutes ago    643MB
