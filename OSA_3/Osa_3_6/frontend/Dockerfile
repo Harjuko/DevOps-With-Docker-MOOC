@@ -1,11 +1,30 @@
-FROM node:14-alpine as build-stage
+FROM node:alpine as build-stage
 
-WORKDIR /usr/src/app
-COPY . .
-RUN npm install
-RUN REACT_APP_BACKEND_URL=http://localhost:8080 npm run build
+COPY . /app
 
-FROM nginx:stable-alpine
-COPY --from=build-stage /usr/src/app/build /usr/share/nginx/html
+WORKDIR /app
+
+ENV API_URL="http://localhost:8000"
+
+RUN npm install && npm run build
+
+FROM node:alpine
+
+WORKDIR /app
+
+COPY --from=build-stage /app/build /app/build
+
+RUN npm install -g serve &&\
+    adduser -D appuser &&\
+	chown -R appuser /app
+
+USER appuser
+
 EXPOSE 5000
-CMD ["nginx", "-g", "daemon off;"]
+
+CMD ["serve", "-s", "-l", "5000", "build"]
+
+
+
+
+

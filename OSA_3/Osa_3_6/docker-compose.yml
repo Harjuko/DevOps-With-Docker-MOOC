@@ -1,17 +1,30 @@
-version: '3.5' 
+version: '3.5'
 
 services:
+
   redis:
     image: redis
+  
+  proxy:
+    image: nginx
+    volumes:
+     - ./nginx.conf:/etc/nginx/nginx.conf
+    ports: 
+     - 80:80
+    depends_on:
+      - frontend
+      - backend 
 
-  backend: 
-    build: ./material-applications/example-backend/
-    ports:
-      - 8080:8080
+  backend:
+    build: ./backend/
     environment:
       - REDIS_HOST=redis
+    ports:
+      - 8080:8080
 
   frontend:
-    build: ./material-applications/example-frontend/
+    build: ./frontend/
     ports:
       - 5000:5000
+    depends_on:
+      - backend
